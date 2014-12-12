@@ -16,7 +16,7 @@
  *= require animate.min
  *= require font-awesome.min
  * require form
- * require calendar
+ *= require calendar
  *= require style
  *= require icons
  *= require generics
