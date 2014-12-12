@@ -9,7 +9,9 @@ set :deploy_to, '/home/deploy/zoe'
 set :linked_files, %w{config/secrets.yml}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
 
-ssh_options[:port] = 2222
+set :ssh_options, {
+  port: 2222
+}
 
 namespace :deploy do
 
