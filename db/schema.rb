@@ -11,15 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141212101638) do
-
-  create_table "ants", force: true do |t|
-    t.integer  "x"
-    t.integer  "y"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20141212145823) do
 
   create_table "api_keys", force: true do |t|
     t.string   "key"
@@ -30,21 +22,12 @@ ActiveRecord::Schema.define(version: 20141212101638) do
     t.datetime "updated_at"
   end
 
-  create_table "games", force: true do |t|
-    t.string   "name"
-    t.string   "status"
-    t.integer  "xsize"
-    t.integer  "ysize"
-    t.integer  "start_ants"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "field"
-  end
-
-  create_table "next_moves", force: true do |t|
-    t.integer  "ant"
-    t.integer  "x"
-    t.integer  "y"
+  create_table "user_updates", force: true do |t|
+    t.integer  "user_id"
+    t.string   "description", default: ""
+    t.string   "icon",        default: "fa-bell"
+    t.integer  "posted_by"
+    t.boolean  "read",        default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

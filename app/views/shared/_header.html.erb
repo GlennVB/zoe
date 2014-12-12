@@ -4,16 +4,16 @@
             <div class="media-body">
                 <div class="media" id="top-menu">
                     <div class="pull-left tm-icon">
-                        <a data-drawer="messages" class="drawer-toggle" href="">
+                        <a data-drawer="messages" class="drawer-toggle" href="#">
                             <i class="sa-top-message"></i>
                             <i class="n-count animated">5</i>
                             <span>Messages</span>
                         </a>
                     </div>
                     <div class="pull-left tm-icon">
-                        <a data-drawer="notifications" class="drawer-toggle" href="">
+                    	<a data-drawer="notifications" class="drawer-toggle" href="#" id="notify_clicker">
                             <i class="sa-top-updates"></i>
-                            <i class="n-count animated">9</i>
+                            <% if current_user.user_updates.unread.count > 0 %><i class="n-count animated unread"><%= current_user.user_updates.unread.count %></i><% end %>
                             <span>Updates</span>
                         </a>
                     </div>
