@@ -12,9 +12,9 @@
  *
  * require_tree .
  * require_self
- * require bootstrap.min
- * require animate.min
- * require font-awesome.min
+ *= require bootstrap.min
+ *= require animate.min
+ *= require font-awesome.min
  * require form
  * require calendar
  * require style
