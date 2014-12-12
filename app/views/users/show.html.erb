@@ -22,6 +22,12 @@
 		</div>
 	</div>
 	<div class="form-group">
+		<label class="col-md-2 control-label">Profile</label>
+		<div class="col-md-10">
+			<p class="form-control-static"><%= current_user.profile.html_safe %></p>
+		</div>
+	</div>
+	<div class="form-group">
 		<label class="col-md-2 control-label">Theme Preference</label>
 		<div class="col-md-10">
 			<p class="form-control-static"><%= current_user.theme_preference %></p>

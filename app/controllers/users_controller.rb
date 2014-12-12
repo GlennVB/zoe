@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   
   # User personal info page
   def index
-    
+    @users = User.all
   end
   
   # User Settings Page
@@ -36,6 +36,6 @@ class UsersController < ApplicationController
     @user = current_user
   end
   def user_params
-    params.require(:user).permit(:email, :full_name, :username, :theme_preference)
+    params.require(:user).permit(:email, :full_name, :username, :theme_preference, :profile)
   end
 end

@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141212145823) do
+ActiveRecord::Schema.define(version: 20141212181140) do
+
+  create_table "api_keys", force: true do |t|
+    t.string   "alias"
+    t.string   "key"
+    t.string   "status",     default: "Open"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "user_updates", force: true do |t|
     t.integer  "user_id"
@@ -46,6 +55,7 @@ ActiveRecord::Schema.define(version: 20141212145823) do
     t.string   "full_name",              default: ""
     t.string   "username",               default: ""
     t.string   "theme_preference",       default: "skin-blur-blue"
+    t.text     "profile"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

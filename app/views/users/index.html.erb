@@ -1,0 +1,23 @@
+<h4 class="page-title">Users</h4>
+<div class="listview list-container">
+	<% @users.each do |user| %>
+        <div class="media">
+            <div class="media-body">
+                <div class="list-options">
+                	<%= link_to user_path(user), :class => "btn btn-sm" do %>
+                    	<i class="fa fa-user fa-4x fa-fw p-10"></i>
+                    	<br>
+                    	User Profile
+                    <% end %>
+                </div>
+                <h5><strong><%= user.username || user.email %></strong>&nbsp;(<%= user.email%>)</h5>
+                <div class="clearfix"></div>
+                <small><blockquote><%= user.profile.html_safe %></blockquote></small>
+                <div class="clearfix"></div>
+                <div class="attrs">Date created: <%= user.created_at %></div>
+                <div class="block attrs">Login count: <%= user.sign_in_count %></div>
+
+            </div>
+        </div>
+	<% end %>	
+</div>
