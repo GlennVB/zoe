@@ -1,18 +1,25 @@
 class UsersController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_user
-  def get_ants
-    puts "User requestex ants"
-    render json: @user.ants, except: [:created_at, :updated_at, :user_id]
+
+  def update
+    @user.update(user_params)
+    render action: :index
   end
   
-  def post_ants
-    puts "User posted ants"
-    @ants = params[:ants]
-    render nothing: true
+  def index
+    
+  end
+  
+  def edit
+    
   end
   
   private
   def set_user
-    @user = User.find(params[:user_id].to_s || params[:user_id].to_s)
+    @user = current_user
+  end
+  def user_params
+    params.require(:user).permit(:email, :full_name, :username, :theme_preference)
   end
 end

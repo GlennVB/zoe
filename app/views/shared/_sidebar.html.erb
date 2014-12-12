@@ -9,9 +9,9 @@
                 <img class="profile-pic animated" src="/img/profile-pic.jpg" alt="">
             </a>
             <ul class="dropdown-menu profile-menu">
-                <li><a href="">My Profile</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
+                <li><%= link_to users_path do %>My Profile<% end %> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
                 <li><a href="">Messages</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
-                <li><a href="">Settings</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
+                <li><%= link_to edit_user_path(current_user) do %>Settings<% end %> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
                 <li><%= link_to(destroy_user_session_path, :method => :get) do %>Sign Out<% end %> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
             </ul>
             <h4 class="m-0"><%= current_user.full_name %></h4>

@@ -1,0 +1,31 @@
+<h4 class="page-title">User Config</h4>
+<div class="block-area" id="horizontal">
+	
+	<h3 class="block-title">Overview Profile</h3>
+	<form class="form-horizontal" role="form">
+	<div class="form-group">
+		<label class="col-md-2 control-label">User Name</label>
+		<div class="col-md-10">
+			<p class="form-control-static"><%= current_user.username %></p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label">Email</label>
+		<div class="col-md-10">
+			<p class="form-control-static"><%= current_user.email %></p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label">Full Name</label>
+		<div class="col-md-10">
+			<p class="form-control-static"><%= current_user.full_name %></p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label">Theme Preference</label>
+		<div class="col-md-10">
+			<p class="form-control-static"><%= current_user.theme_preference %></p>
+		</div>
+	</div>	
+	</form>
+</div>
