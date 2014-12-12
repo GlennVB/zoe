@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   # Post settings page
   def update
     @user.update(user_params)
-    render action: :index
+    redirect_to @user
   end
   
   # User personal info page
@@ -17,6 +17,11 @@ class UsersController < ApplicationController
   # User Settings Page
   def edit
     
+  end
+  
+  # User Profile Page
+  def show
+    @user = User.find(params[:id] || params[:user_id])
   end
   
   def read_notifications

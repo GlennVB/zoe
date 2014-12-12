@@ -9,7 +9,7 @@
                 <img class="profile-pic animated" src="/img/profile-pic.jpg" alt="">
             </a>
             <ul class="dropdown-menu profile-menu">
-                <li><%= link_to users_path do %>My Profile<% end %> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
+                <li><%= link_to user_path(current_user) do %>My Profile<% end %> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
                 <li><a href="">Messages</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
                 <li><%= link_to edit_user_path(current_user) do %>Settings<% end %> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
                 <li><%= link_to(destroy_user_session_path, :method => :get) do %>Sign Out<% end %> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
@@ -88,15 +88,16 @@
     <!-- Side Menu -->
     <ul class="list-unstyled side-menu">
         <li class="active">
-            <a class="sa-side-home" href="index.html">
+        	<%= link_to root_path, :class => "sa-side-home" do %>
                 <span class="menu-item">Dashboard</span>
-            </a>
+            <% end %>
         </li>
         <li>
-            <a class="sa-side-typography" href="typography.html">
-                <span class="menu-item">Typography</span>
-            </a>
+        	<%= link_to users_path, :class => "sa-side-typography" do %>
+                <span class="menu-item">Users</span>
+            <% end %>
         </li>
+        <!--
         <li>
             <a class="sa-side-widget" href="content-widgets.html">
                 <span class="menu-item">Widgets</span>
@@ -168,6 +169,7 @@
                 <li><a href="404.html">404 Error</a></li>
             </ul>
         </li>
+        -->
     </ul>
 
 </aside>

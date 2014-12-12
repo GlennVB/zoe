@@ -34,4 +34,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,:confirmable, :lockable, :timeoutable
   has_many :api_keys
   has_many :user_updates
+  
+  def add_update(description, icon)
+    self.user_updates.create(description: description, icon: icon)
+  end
 end
