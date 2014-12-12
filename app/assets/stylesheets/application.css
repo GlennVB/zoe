@@ -15,9 +15,9 @@
  *= require bootstrap.min
  *= require animate.min
  *= require font-awesome.min
- * require form
- * require calendar
+ *= require form
+ *= require calendar
  * require style
- * require icons
- * require generics
+ *= require icons
+ *= require generics
  */
