@@ -1,32 +1,34 @@
-<%%= form_for(@<%= singular_table_name %>) do |f| %>
+<%%= form_for(@<%= singular_table_name %>, :html => {:class => "form-horizontal"}) do |f| %>
   <%% if @<%= singular_table_name %>.errors.any? %>
     <div id="error_explanation">
-      <h2><%%= pluralize(@<%= singular_table_name %>.errors.count, "error") %> prohibited this <%= singular_table_name %> from being saved:</h2>
+      <h3 class="block-title"><%%= pluralize(@<%= singular_table_name %>.errors.count, "error") %> prohibited this <%= singular_table_name %> from being saved:</h3>
 
-      <ul>
       <%% @<%= singular_table_name %>.errors.full_messages.each do |message| %>
-        <li><%%= message %></li>
+        <div class="alert alert-info"><%%= message %></div>
       <%% end %>
-      </ul>
     </div>
   <%% end %>
 
 <% attributes.each do |attribute| -%>
-  <div class="field">
+  <div class="form-group">
 <% if attribute.password_digest? -%>
     <%%= f.label :password %><br>
     <%%= f.password_field :password %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%%= f.label :password_confirmation %><br>
     <%%= f.password_field :password_confirmation %>
 <% else -%>
-    <%%= f.label :<%= attribute.column_name %> %><br>
-    <%%= f.<%= attribute.field_type %> :<%= attribute.column_name %> %>
+    <%%= f.label :<%= attribute.column_name %>,:class => "col-md-2 control-label" %>
+    <div class="col-md-10">
+    <%%= f.<%= attribute.field_type %> :<%= attribute.column_name %>, :class => "form-control m-b-10", :placeholder => "<%= attribute.column_name %>" %>
+    </div>
 <% end -%>
   </div>
 <% end -%>
-  <div class="actions">
-    <%%= f.submit %>
-  </div>
+	<div class="form-group">
+		<div class="col-md-offset-2 col-md-10">
+			<%%= f.submit "Submit",:class => "btn btn-info btn-sm m-t-10" %>
+		</div>
+	</div>
 <%% end %>

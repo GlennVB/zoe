@@ -1,6 +1,6 @@
-custom new page
-<h1>New <%= singular_table_name.titleize %></h1>
-
+<h4 class="page-title"><%= singular_table_name.titleize %></h4>
+<div class="block-area" id="horizontal">
+	<h3 class="block-title">New <%= singular_table_name.titleize %></h3>
 <%%= render 'form' %>
-
 <%%= link_to 'Back', <%= index_helper %>_path %>
+</div>

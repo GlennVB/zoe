@@ -1,6 +1,7 @@
-<h1>Editing <%= singular_table_name.titleize %></h1>
-
+<h4 class="page-title"><%= singular_table_name.titleize %></h4>
+<div class="block-area" id="horizontal">
+	<h3 class="block-title">Editing <%= singular_table_name.titleize %></h3>
 <%%= render 'form' %>
-
 <%%= link_to 'Show', @<%= singular_table_name %> %> |
 <%%= link_to 'Back', <%= index_helper %>_path %>
+</div>

@@ -13,15 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20141212145823) do
 
-  create_table "api_keys", force: true do |t|
-    t.string   "key"
-    t.integer  "user_id"
-    t.string   "status"
-    t.string   "open"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "user_updates", force: true do |t|
     t.integer  "user_id"
     t.string   "description", default: ""

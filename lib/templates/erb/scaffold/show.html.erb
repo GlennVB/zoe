@@ -1,11 +1,22 @@
-<p id="notice"><%%= notice %></p>
+<h4 class="page-title"><%= singular_table_name.titleize %></h4>
+<div class="block-area" id="horizontal">
+	<div id="notice"><%%= notice %></div>
+	<h3 class="block-title"><%= singular_table_name.titleize %></h3>
+	<form class="form-horizontal" role="form">
+	<% attributes.reject(&:password_digest?).each do |attribute| -%>
+	<div class="form-group">
+		<label class="col-md-2 control-label"><%= attribute.human_name %></label>
+		<div class="col-md-10">
+			<p class="form-control-static"><%%= @<%= singular_table_name %>.<%= attribute.name %> %></p>
+		</div>
+	</div>
+	<% end -%>
+	</form>
+	<div class="form-group">
+		<div class="col-md-10 col-md-offset-2">
+			<%%= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>) %> |
+			<%%= link_to 'Back', <%= index_helper %>_path %>
+		</div>
+	</div>
+</div>
 
-<% attributes.reject(&:password_digest?).each do |attribute| -%>
-<p>
-  <strong><%= attribute.human_name %>:</strong>
-  <%%= @<%= singular_table_name %>.<%= attribute.name %> %>
-</p>
-
-<% end -%>
-<%%= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>) %> |
-<%%= link_to 'Back', <%= index_helper %>_path %>

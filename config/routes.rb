@@ -1,5 +1,6 @@
-Rails.application.routes.draw do
-  resources :api_keys
+Rails.application.routes.draw do  
+  devise_for :users
+  
   resources :users, only: [:update, :edit, :index, :show]
   post "users/read_notifications"
   resources :games do
@@ -9,7 +10,7 @@ Rails.application.routes.draw do
     end
   end
 
-  devise_for :users
+  
   
   root "home#index"
 
