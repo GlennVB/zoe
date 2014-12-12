@@ -12,7 +12,7 @@
                 </div>
                 <h5><strong><%= user.username || user.email %></strong>&nbsp;(<%= user.email%>)</h5>
                 <div class="clearfix"></div>
-                <small><blockquote><%= user.profile.html_safe %></blockquote></small>
+                <small><blockquote><%= user.profile.html_safe if user.profile %></blockquote></small>
                 <div class="clearfix"></div>
                 <div class="attrs">Date created: <%= user.created_at %></div>
                 <div class="block attrs">Login count: <%= user.sign_in_count %></div>
