@@ -15,7 +15,8 @@
             </header>
         
             <div class="clearfix"></div>
-            
+            <%= content_tag(:div, notice, :class => "alert alert-info") if notice %>
+            <%= content_tag(:div, alert, :class => "alert alert-warning") if alert %>
             <%= yield %>
             
         </section>  
