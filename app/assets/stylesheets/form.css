@@ -167,7 +167,7 @@ input[type="checkbox"], input[type="radio"]{
 
 .btn:not(.form-control){
    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#000000', GradientType=0 );
-   opacity: 0.8\0/;
+   opacity: 0.8;
 }
 
 .btn-alt {
