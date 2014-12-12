@@ -6,7 +6,7 @@ set :repo_url, 'git@github.com:glennvb/zoe.git'
 
 set :deploy_to, '/home/deploy/zoe'
 
-set :linked_files, %w{config/secrets.yml}
+set :linked_files, %w{config/secrets.yml config/database.yml}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
 
 set :ssh_options, {
