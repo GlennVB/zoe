@@ -2,7 +2,7 @@ class CreateApiKeys < ActiveRecord::Migration
   def change
     table_name = "api_keys"
     if ActiveRecord::Base.connection.table_exists? table_name
-      puts "\n== " + table_name.upcase.cyan + " ! " << Time.now.strftime("%H:%M:%S").yellow
+      puts "\n== " + table_name.upcase + " ! " << Time.now.strftime("%H:%M:%S").yellow
       drop_table table_name 
     end
     create_table :api_keys do |t|
