@@ -1,0 +1,31 @@
+<h4 class="page-title b-0"><%= plural_table_name.titleize %></h4>
+
+<div class="table-responsive overflow" style="overflow: hidden; outline: none;">
+	<table class="table table-bordered table-hover tile">
+	  <thead>
+	    <tr>
+	<% attributes.reject(&:password_digest?).each do |attribute| -%>
+	      <th><%= attribute.human_name %></th>
+	<% end -%>
+	      <th class="text-right"></th>
+	    </tr>
+	  </thead>
+	
+	  <tbody>
+	    <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
+	      <tr>
+	<% attributes.reject(&:password_digest?).each do |attribute| -%>
+	        <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+	<% end -%>
+	        <td class="text-right"><%%= link_to <%= singular_table_name %>, :class => "btn m-r-5" do %><i class="fa fa-eye fa-fw"></i><%% end %>
+	        <%%= link_to edit_<%= singular_table_name %>_path(<%= singular_table_name %>), :class => "btn m-r-5" do %><i class="fa fa-pencil fa-fw"></i><%% end %>
+	        <%%= link_to <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn m-r-5" do %><i class="fa fa-trash fa-fw"></i><%% end %></td>
+	      </tr>
+	    <%% end %>
+	  </tbody>
+	</table>
+</div>
+
+<br>
+
+<%%= link_to 'New <%= human_name %>', new_<%= singular_table_name %>_path, :class => "btn" %>

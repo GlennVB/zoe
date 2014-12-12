@@ -1,0 +1,50 @@
+<!-- Login -->
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {id: "box-login", class: "box tile animated active"}) do |f| %>
+	<h2 class="m-t-0 m-b-15">Login</h2>
+
+    <%= f.email_field :email, autofocus: true, :class => "login-control m-b-10", :placeholder => "Username or Email Address" %>
+    <%= f.password_field :password, autocomplete: "off", :class => "login-control", :placeholder => "Password" %>
+
+  <% if devise_mapping.rememberable? -%>
+	<div class="checkbox m-b-20">
+		<label>
+			<%= f.check_box :remember_me %>
+		    Remember Me
+		</label>
+	</div>
+  <% end -%>
+
+  <%= f.submit "Sign in", :class => "btn btn-sm m-r-5" %>
+  
+	<small>
+	    <a class="box-switcher" data-switch="box-register" href="">Don't have an Account?</a> or
+	    <a class="box-switcher" data-switch="box-reset" href="">Forgot Password?</a>
+	    <br><%= render "devise/shared/links" %>
+	</small>
+<% end %>
+
+            
+            <!-- Register -->
+		<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {id: "box-register", class: "box animated tile"}) do |f| %>
+		<h2 class="m-t-0 m-b-15">Register</h2>
+		  <%= devise_error_messages! %>
+		
+		    <%= f.email_field :email, autofocus: true, :class => "login-control m-b-10", :placeholder => "Email Address" %>
+		    <%= f.password_field :password, autocomplete: "off", :class => "login-control m-b-10", :placeholder => "Password" %>
+		    <%= f.password_field :password_confirmation, autocomplete: "off", :class => "login-control m-b-20", :placeholder => "Confirm Password" %>
+		
+		  <%= f.submit "Register", :class => "btn btn-sm m-r-5" %>
+		  
+		  <small><a class="box-switcher" data-switch="box-login" href="">Already have an Account?</a></small>
+		<% end %>
+            
+            <!-- Forgot Password -->
+            <form class="box animated tile" id="box-reset">
+                <h2 class="m-t-0 m-b-15">Reset Password</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu risus. Curabitur commodo lorem fringilla enim feugiat commodo sed ac lacus.</p>
+                <input type="email" class="login-control m-b-20" placeholder="Email Address">    
+
+                <button class="btn btn-sm m-r-5">Reset Password</button>
+
+                <small><a class="box-switcher" data-switch="box-login" href="">Already have an Account?</a></small>
+            </form>
