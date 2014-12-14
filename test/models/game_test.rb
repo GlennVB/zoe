@@ -1,19 +1,19 @@
 # == Schema Information
 #
-# Table name: api_keys
+# Table name: games
 #
 #  id         :integer          not null, primary key
-#  alias      :string(255)
-#  key        :string(255)
-#  status     :string(255)      default("Open")
-#  user_id    :integer
+#  name       :string(255)
+#  sizex      :integer
+#  sizey      :integer
+#  status     :string(255)
 #  created_at :datetime
 #  updated_at :datetime
 #
 
 require 'test_helper'
 
-class ApiKeyTest < ActiveSupport::TestCase
+class GameTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

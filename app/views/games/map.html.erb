@@ -1,0 +1,17 @@
+<% @data = @game.load_map %>
+<% @data.each do |row| %>
+			<% row.each do |d| %>
+			<%= d %>
+			<% end %>
+<% end %>
+<table >
+	<tbody>
+		<% @data.each do |row| %>
+		<tr>
+			<% row.each do |d| %>
+			<td class="team<%= d %>"><%= d == " " ? "&nbsp;".html_safe : d %></td>
+			<% end %>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

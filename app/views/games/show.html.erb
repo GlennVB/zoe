@@ -1,0 +1,61 @@
+<h4 class="page-title">Game</h4>
+<div class="block-area" id="horizontal">
+	<div id="notice"><%= notice %></div>
+	<h3 class="block-title">Game</h3>
+	<form class="form-horizontal" role="form">
+		<div class="form-group">
+		<label class="col-md-2 control-label">Name</label>
+		<div class="col-md-10">
+			<p class="form-control-static"><%= @game.name %></p>
+		</div>
+	</div>
+		<div class="form-group">
+		<label class="col-md-2 control-label">Sizex</label>
+		<div class="col-md-10">
+			<p class="form-control-static"><%= @game.sizex %></p>
+		</div>
+	</div>
+		<div class="form-group">
+		<label class="col-md-2 control-label">Sizey</label>
+		<div class="col-md-10">
+			<p class="form-control-static"><%= @game.sizey %></p>
+		</div>
+	</div>
+		<div class="form-group">
+		<label class="col-md-2 control-label">Status</label>
+		<div class="col-md-10">
+			<p class="form-control-static"><%= @game.status %></p>
+		</div>
+	</div>
+		</form>
+	<div class="form-group">
+		<div class="col-md-10 col-md-offset-2">
+			<%= link_to 'Edit', edit_game_path(@game) %> |
+			<%= link_to 'Back', games_path %>
+		</div>
+	</div>
+</div>
+<div class="block-area">
+	<% @data = @game.load_map %>
+	<div class="col-md-12">
+	<table class="table tile table-bordered">
+		<thead>
+			<tr>
+			<% @data.count.times do |i| %>
+			<th>i</th>
+			<% end %>
+			</tr>
+		</thead>
+		<tbody>
+			<% @data.each do |row| %>
+			<tr>
+				<% row.each do |d| %>
+				<td class="team<%= d %>"><%= d == " " ? "&nbsp;".html_safe : "&nbsp;".html_safe %></td>
+				<% end %>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	</div>
+</div>
+

@@ -21,3 +21,10 @@
  *= require icons
  *= require generics
  */
+.team1{
+	background-color: #FF0000;
+}
+
+.team0{
+	background-color: #0000FF;
+}

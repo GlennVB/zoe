@@ -25,6 +25,7 @@
 #  full_name              :string(255)      default("")
 #  username               :string(255)      default("")
 #  theme_preference       :string(255)      default("skin-blur-blue")
+#  profile                :text
 #
 
 class User < ActiveRecord::Base
@@ -38,4 +39,7 @@ class User < ActiveRecord::Base
   def add_update(description, icon)
     self.user_updates.create(description: description, icon: icon)
   end
+  
+  has_many :games, through: :players
+  has_many :players
 end

@@ -25,6 +25,7 @@
 #  full_name              :string(255)      default("")
 #  username               :string(255)      default("")
 #  theme_preference       :string(255)      default("skin-blur-blue")
+#  profile                :text
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

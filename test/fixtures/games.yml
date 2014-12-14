@@ -1,12 +1,12 @@
 # == Schema Information
 #
-# Table name: api_keys
+# Table name: games
 #
 #  id         :integer          not null, primary key
-#  alias      :string(255)
-#  key        :string(255)
-#  status     :string(255)      default("Open")
-#  user_id    :integer
+#  name       :string(255)
+#  sizex      :integer
+#  sizey      :integer
+#  status     :string(255)
 #  created_at :datetime
 #  updated_at :datetime
 #
@@ -14,13 +14,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  alias: MyString
-  key: MyString
+  name: MyString
+  sizex: 1
+  sizey: 1
   status: MyString
-  user_id: 1
 
 two:
-  alias: MyString
-  key: MyString
+  name: MyString
+  sizex: 1
+  sizey: 1
   status: MyString
-  user_id: 1

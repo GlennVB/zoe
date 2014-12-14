@@ -1,11 +1,18 @@
 Rails.application.routes.draw do  
+  resources :games
+
   resources :api_keys
 
+  namespace :api do
+    get "games/:game_id/users/:user_id/get_ants" => UsersController
+    post "games/:game_id/users/:user_id/post_ants" => UsersController
+  end
   devise_for :users
   
   resources :users, only: [:update, :edit, :index, :show]
   post "users/read_notifications"
   resources :games do
+    get "map"
     resources :users do
       get "get_ants"
       get "post_ants"

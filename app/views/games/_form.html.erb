@@ -1,0 +1,41 @@
+<%= form_for(@game, :html => {:class => "form-horizontal"}) do |f| %>
+  <% if @game.errors.any? %>
+    <div id="error_explanation">
+      <h3 class="block-title"><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h3>
+
+      <% @game.errors.full_messages.each do |message| %>
+        <div class="alert alert-info"><%= message %></div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name,:class => "col-md-2 control-label" %>
+    <div class="col-md-10">
+    <%= f.text_field :name, :class => "form-control m-b-10", :placeholder => "name" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :sizex,:class => "col-md-2 control-label" %>
+    <div class="col-md-10">
+    <%= f.number_field :sizex, :class => "form-control m-b-10", :placeholder => "sizex" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :sizey,:class => "col-md-2 control-label" %>
+    <div class="col-md-10">
+    <%= f.number_field :sizey, :class => "form-control m-b-10", :placeholder => "sizey" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :status,:class => "col-md-2 control-label" %>
+    <div class="col-md-10">
+    <%= f.text_field :status, :class => "form-control m-b-10", :placeholder => "status" %>
+    </div>
+  </div>
+	<div class="form-group">
+		<div class="col-md-offset-2 col-md-10">
+			<%= f.submit "Submit",:class => "btn btn-info btn-sm m-t-10" %>
+		</div>
+	</div>
+<% end %>
