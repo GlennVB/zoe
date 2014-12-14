@@ -2,6 +2,9 @@
 <div class="listview list-container">
 	<% @users.each do |user| %>
         <div class="media">
+        	<div class="pull-left">
+        		<img class="profile-pic animated" src="<%= user.avatar.file != nil ? user.avatar.url : "/img/profile-pic.jpg" %>" alt="">
+        	</div>
             <div class="media-body">
                 <div class="list-options">
                 	<%= link_to user_path(user), :class => "btn btn-sm" do %>

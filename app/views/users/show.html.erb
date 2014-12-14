@@ -37,7 +37,7 @@
 		<label class="col-md-2 control-label">Avatar</label>
 		<div class="col-md-10">
 			<p class="form-control-static">
-				<img class="profile-pic animated" src="<%= current_user.avatar.file != nil ? current_user.avatar.url : "/img/profile-pic.jpg" %>" alt="">
+				<img class="profile-pic animated" src="<%= @user.avatar.file != nil ? @user.avatar.url : "/img/profile-pic.jpg" %>" alt="">
 			</p>
 		</div>
 	</div>
