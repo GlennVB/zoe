@@ -46,3 +46,4 @@ gem 'capistrano-rails', '~> 1.1.1'
 gem 'capistrano-rvm', github: "capistrano/rvm"
 
 gem 'mysql2', group: :production
+gem 'carrierwave'

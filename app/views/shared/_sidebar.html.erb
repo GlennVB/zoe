@@ -6,7 +6,7 @@
         <!-- Profile Menu -->
         <div class="text-center s-widget m-b-25 dropdown" id="profile-menu">
             <a href="" data-toggle="dropdown">
-                <img class="profile-pic animated" src="/img/profile-pic.jpg" alt="">
+                <img class="profile-pic animated" src="<%= current_user.avatar.file != nil ? current_user.avatar.url : "/img/profile-pic.jpg" %>" alt="">
             </a>
             <ul class="dropdown-menu profile-menu">
                 <li><%= link_to user_path(current_user) do %>My Profile<% end %> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>

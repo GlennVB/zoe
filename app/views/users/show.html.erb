@@ -6,32 +6,40 @@
 	<div class="form-group">
 		<label class="col-md-2 control-label">User Name</label>
 		<div class="col-md-10">
-			<p class="form-control-static"><%= current_user.username %></p>
+			<p class="form-control-static"><%= @user.username %></p>
 		</div>
 	</div>
 	<div class="form-group">
 		<label class="col-md-2 control-label">Email</label>
 		<div class="col-md-10">
-			<p class="form-control-static"><%= current_user.email %></p>
+			<p class="form-control-static"><%= @user.email %></p>
 		</div>
 	</div>
 	<div class="form-group">
 		<label class="col-md-2 control-label">Full Name</label>
 		<div class="col-md-10">
-			<p class="form-control-static"><%= current_user.full_name %></p>
+			<p class="form-control-static"><%= @user.full_name %></p>
 		</div>
 	</div>
 	<div class="form-group">
 		<label class="col-md-2 control-label">Profile</label>
 		<div class="col-md-10">
-			<p class="form-control-static"><%= current_user.profile.html_safe if current_user.profile %></p>
+			<p class="form-control-static"><%= @user.profile.html_safe if @user.profile %></p>
 		</div>
 	</div>
 	<div class="form-group">
 		<label class="col-md-2 control-label">Theme Preference</label>
 		<div class="col-md-10">
-			<p class="form-control-static"><%= current_user.theme_preference %></p>
+			<p class="form-control-static"><%= @user.theme_preference %></p>
 		</div>
 	</div>	
+	<div class="form-group">
+		<label class="col-md-2 control-label">Avatar</label>
+		<div class="col-md-10">
+			<p class="form-control-static">
+				<img class="profile-pic animated" src="<%= current_user.avatar.file != nil ? current_user.avatar.url : "/img/profile-pic.jpg" %>" alt="">
+			</p>
+		</div>
+	</div>
 	</form>
 </div>
