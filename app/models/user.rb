@@ -36,12 +36,16 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,:confirmable, :lockable, :timeoutable
   has_many :api_keys
   has_many :user_updates
+  has_many :ideas
+  has_many :games, through: :players
+  has_many :players
+  mount_uploader :avatar, AvatarUploader
   
   def add_update(description, icon)
     self.user_updates.create(description: description, icon: icon)
   end
   
-  has_many :games, through: :players
-  has_many :players
-  mount_uploader :avatar, AvatarUploader
+  def to_s
+    return self.username != "" ? self.username : self.email
+  end
 end

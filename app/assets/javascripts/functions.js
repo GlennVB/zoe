@@ -101,12 +101,14 @@ $(document).ready(function(){
             //Add line-through when checking
             $('.todo-list .media input').on('ifChecked', function(){
                 $(this).closest('.media').find('.checkbox label').css('text-decoration', 'line-through');
+                $.post($(this).parent().parent().attr("action"), {"idea[completed]": true});
             });
 
             $('.todo-list .media input').on('ifUnchecked', function(){
                 $(this).closest('.media').find('.checkbox label').removeAttr('style');
+                $.post($(this).parent().parent().attr("action"), {"idea[completed]": false});
             });    
-        })
+        });
     })();
 
     /* --------------------------------------------------------

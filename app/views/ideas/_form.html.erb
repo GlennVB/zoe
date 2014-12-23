@@ -1,0 +1,41 @@
+<%= form_for(@idea, :html => {:class => "form-horizontal"}) do |f| %>
+  <% if @idea.errors.any? %>
+    <div id="error_explanation">
+      <h3 class="block-title"><%= pluralize(@idea.errors.count, "error") %> prohibited this idea from being saved:</h3>
+
+      <% @idea.errors.full_messages.each do |message| %>
+        <div class="alert alert-info"><%= message %></div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name,:class => "col-md-2 control-label" %>
+    <div class="col-md-10">
+    <%= f.text_field :name, :class => "form-control m-b-10", :placeholder => "name" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :description,:class => "col-md-2 control-label" %>
+    <div class="col-md-10">
+    <%= f.text_area :description, :class => "form-control m-b-10", :placeholder => "description" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :completed,:class => "col-md-2 control-label" %>
+    <div class="col-md-10">
+    <%= f.check_box :completed, :class => "form-control m-b-10", :placeholder => "completed" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :published,:class => "col-md-2 control-label" %>
+    <div class="col-md-10">
+    <%= f.check_box :published, :class => "form-control m-b-10", :placeholder => "published" %>
+    </div>
+  </div>
+	<div class="form-group">
+		<div class="col-md-offset-2 col-md-10">
+			<%= f.submit "Submit",:class => "btn btn-info btn-sm m-t-10" %>
+		</div>
+	</div>
+<% end %>

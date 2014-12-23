@@ -1,4 +1,8 @@
 Rails.application.routes.draw do  
+  resources :ideas do
+    post "" => "ideas#update"
+  end
+
   resources :games
 
   resources :api_keys
@@ -18,8 +22,6 @@ Rails.application.routes.draw do
       get "post_ants"
     end
   end
-
-  
   
   root "home#index"
 

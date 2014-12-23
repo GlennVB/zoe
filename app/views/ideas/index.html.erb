@@ -1,0 +1,37 @@
+<h4 class="page-title">Ideas</h4>
+<div class="block-area" id="defaultStyle">
+	<h3 class="block-title">Ideas index</h3>
+<div class="table-responsive overflow" style="overflow: hidden; outline: none;">
+	<table class="table table-bordered table-hover tile">
+	  <thead>
+	    <tr>
+		      <th>Name</th>
+		      <th>Description</th>
+		      <th>Completed</th>
+		      <th>User</th>
+		      <th>Published</th>
+		      <th class="text-right col-md-2"></th>
+	    </tr>
+	  </thead>
+	
+	  <tbody>
+	    <% @ideas.each do |idea| %>
+	      <tr>
+		        <td><%= idea.name %></td>
+		        <td><%= idea.description %></td>
+		        <td><%= idea.completed %></td>
+		        <td><%= idea.user.to_s %></td>
+		        <td><%= idea.published %></td>
+		        <td class="text-right col-md-2"><%= link_to idea, :class => "btn m-r-5" do %><i class="fa fa-eye fa-fw"></i><% end %>
+	        <%= link_to edit_idea_path(idea), :class => "btn m-r-5" do %><i class="fa fa-pencil fa-fw"></i><% end %>
+	        <%= link_to idea, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn m-r-5" do %><i class="fa fa-trash-o fa-fw"></i><% end %></td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+</div>
+
+<br>
+
+<%= link_to 'New Idea', new_idea_path, :class => "btn" %>
+</div>

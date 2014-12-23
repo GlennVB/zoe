@@ -1,0 +1,44 @@
+<h4 class="page-title">Idea</h4>
+<div class="block-area" id="horizontal">
+	<div id="notice"><%= notice %></div>
+	<h3 class="block-title">Idea</h3>
+	<form class="form-horizontal" role="form">
+		<div class="form-group">
+		<label class="col-md-2 control-label">Name</label>
+		<div class="col-md-10">
+			<p class="form-control-static"><%= @idea.name %></p>
+		</div>
+	</div>
+		<div class="form-group">
+		<label class="col-md-2 control-label">Description</label>
+		<div class="col-md-10">
+			<p class="form-control-static"><%= @idea.description %></p>
+		</div>
+	</div>
+		<div class="form-group">
+		<label class="col-md-2 control-label">Completed</label>
+		<div class="col-md-10">
+			<p class="form-control-static"><%= @idea.completed %></p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label">User</label>
+		<div class="col-md-10">
+			<p class="form-control-static"><%= link_to @idea.user.to_s, user_path(@idea.user) %></p>
+		</div>
+	</div>
+		<div class="form-group">
+		<label class="col-md-2 control-label">Published</label>
+		<div class="col-md-10">
+			<p class="form-control-static"><%= @idea.published %></p>
+		</div>
+	</div>
+		</form>
+	<div class="form-group">
+		<div class="col-md-10 col-md-offset-2">
+			<%= link_to 'Edit', edit_idea_path(@idea) %> |
+			<%= link_to 'Back', ideas_path %>
+		</div>
+	</div>
+</div>
+
