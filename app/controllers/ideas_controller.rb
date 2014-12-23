@@ -5,7 +5,7 @@ class IdeasController < ApplicationController
   respond_to :js
 
   def index
-    @ideas = Idea.published
+    @ideas = current_user.ideas
     respond_with(@ideas)
   end
 

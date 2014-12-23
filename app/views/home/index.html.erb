@@ -27,7 +27,13 @@
 				</div>
 
 				<div class="listview todo-list">
-					<% current_user.ideas.each do |idea| %>
+					<% if current_user.ideas.count == 0 %>
+						<div class="alert alert-info m-10">
+							No ideas added yet. Add one <%= link_to "here",new_idea_path %>
+						</div>
+						<div class="clearfix"></div>
+					<% end %>
+					<% current_user.ideas.last(10).each do |idea| %>
 					<div class="media">
 						
 						<div class="checkbox m-0">
