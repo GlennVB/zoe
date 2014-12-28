@@ -3,17 +3,12 @@
 <div class="block-area">
 	<div class="row">
 		<div class="col-md-4">
-		<div class="block-area shortcut-area">
-                    <a class="shortcut tile" href="http://94.224.26.193:8081/">
-                        <img src="img/fontawesome/dropbox13.png" alt="">
-                        <small class="t-overflow">ownCloud</small>
-                    </a>
-                    <a class="shortcut tile" href="http://94.224.26.193:8082/">
-                        <img src="img/fontawesome/github10.png" alt="">
-                        <small class="t-overflow">GitLab</small>
-                    </a>
-                </div>
-</div><div class="col-md-4">
+			<div class="block-area shortcut-area">
+				<a class="shortcut tile" href="http://94.224.26.193:8081/"> <img src="img/fontawesome/white/dropbox13.png" alt=""> <small class="t-overflow">ownCloud</small> </a>
+				<a class="shortcut tile" href="http://94.224.26.193:8082/"> <img src="img/fontawesome/white/github10.png" alt=""> <small class="t-overflow">GitLab</small> </a>
+			</div>
+		</div>
+		<div class="col-md-4">
 			<%= widget "tester", :footer => "Copyright" do %>
 			<div class="p-10">
 				<h4>Widget bla</h4>
@@ -39,22 +34,21 @@
 
 				<div class="listview todo-list">
 					<% if current_user.ideas.count == 0 %>
-						<div class="alert alert-info m-10">
-							No ideas added yet. Add one <%= link_to "here",new_idea_path %>
-						</div>
-						<div class="clearfix"></div>
+					<div class="alert alert-info m-10">
+						No ideas added yet. Add one <%= link_to "here",new_idea_path %>
+					</div>
+					<div class="clearfix"></div>
 					<% end %>
 					<% current_user.ideas.last(10).each do |idea| %>
 					<div class="media">
-						
+
 						<div class="checkbox m-0">
-							<label class="t-overflow">
-								<%= form_for(idea) do |f| %>
+							<label class="t-overflow"> <%= form_for(idea) do |f| %>
 								<input type="checkbox" name="idea[completed]" <% if idea.completed %>checked="checked"<% end %>>
 								<% end %>
 								<%= idea.name %> </label>
 						</div>
-						
+
 					</div>
 					<% end %>
 				</div>
