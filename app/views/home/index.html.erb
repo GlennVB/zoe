@@ -14,7 +14,11 @@
 				<div class="pull-right">
 					<%= link_to user_relapse_path(current_user), :class => "btn btn-default", :remote => true do %>ReLapse<% end %>
 				</div>
-				<h4>Quit smoking <strong><%= time_ago_in_words(current_user.quit_smoking) %></strong> ago!</h4>
+				<% if current_user.quit_smoking %>
+					<h4>Quit smoking <strong><%= time_ago_in_words(current_user.quit_smoking) %></strong> ago!</h4>
+				<% else %>
+					Haven't started quitting yet.
+				<% end %>
 			</div>
 			<% end %>
 		</div>
