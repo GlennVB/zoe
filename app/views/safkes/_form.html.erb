@@ -10,9 +10,9 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :user_id,:class => "col-md-2 control-label" %>
+    <%= f.label :created_at,:class => "col-md-2 control-label" %>
     <div class="col-md-10">
-    <%= f.number_field :user_id, :class => "form-control m-b-10", :placeholder => "user_id" %>
+    <%= f.text_field :created_at, :class => "form-control m-b-10 mask-date_time", :placeholder => "time" %>
     </div>
   </div>
 	<div class="form-group">

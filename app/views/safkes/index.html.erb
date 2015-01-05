@@ -5,7 +5,7 @@
 	<table class="table table-bordered table-hover tile">
 	  <thead>
 	    <tr>
-		      <th>User</th>
+		      <th>Safke op </th>
 		      <th class="text-right col-md-2"></th>
 	    </tr>
 	  </thead>
@@ -13,9 +13,9 @@
 	  <tbody>
 	    <% @safkes.each do |safke| %>
 	      <tr>
-		        <td><%= safke.user_id %></td>
-		        <td class="text-right col-md-2"><%= link_to safke, :class => "btn m-r-5" do %><i class="fa fa-eye fa-fw"></i><% end %>
-	        <%= link_to edit_safke_path(safke), :class => "btn m-r-5" do %><i class="fa fa-pencil fa-fw"></i><% end %>
+		        <td><%= safke.created_at.to_formatted_s(:short) %></td>
+		        <td class="text-right col-md-2"><!--<%= link_to safke, :class => "btn m-r-5" do %><i class="fa fa-eye fa-fw"></i><% end %>-->
+	        <!-- <%# link_to edit_safke_path(safke), :class => "btn m-r-5" do %><i class="fa fa-pencil fa-fw"></i><%# end %> -->
 	        <%= link_to safke, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn m-r-5" do %><i class="fa fa-trash-o fa-fw"></i><% end %></td>
 	      </tr>
 	    <% end %>
@@ -25,5 +25,5 @@
 
 <br>
 
-<%= link_to 'New Safke', new_safke_path, :class => "btn" %>
+<%= link_to 'New Safke', new_safke_path, :class => "btn", remote: true %>
 </div>

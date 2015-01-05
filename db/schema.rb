@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150105170101) do
+ActiveRecord::Schema.define(version: 20150105190719) do
 
   create_table "api_keys", force: true do |t|
     t.string   "alias"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20150105170101) do
 
   create_table "ideas", force: true do |t|
     t.string   "name",        default: ""
-    t.text     "description"
+    t.text     "description", default: ""
     t.boolean  "completed",   default: false
     t.integer  "user_id"
     t.boolean  "published",   default: false
@@ -45,6 +45,12 @@ ActiveRecord::Schema.define(version: 20150105170101) do
     t.integer  "user_id"
     t.integer  "game_id"
     t.integer  "player_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "safkes", force: true do |t|
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

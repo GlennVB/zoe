@@ -4,11 +4,7 @@ class UsersController < ApplicationController
   before_action :set_user, except: [:post_ants]
 
   def relapse
-    if params[:time] != nil && params[:time] != ""
-      @user.update_attribute(:quit_smoking, params[:time])
-    else
-      @user.update_attribute(:quit_smoking, DateTime.now)
-    end
+    current_user.relapse
   end
   
   # Post settings page

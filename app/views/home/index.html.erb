@@ -11,14 +11,17 @@
 		<div class="col-md-4">
 			<%= widget "Smoker Widget", :footer => "Copyright" do %>
 			<div class="p-10">
-				<div class="pull-right">
-					<%= link_to user_relapse_path(current_user), :class => "btn btn-default", :remote => true do %>ReLapse<% end %>
-				</div>
+
 				<% if current_user.quit_smoking %>
 					<h4>Quit smoking <strong><%= time_ago_in_words(current_user.quit_smoking) %></strong> ago!</h4>
 				<% else %>
-					Haven't started quitting yet.
+					<div class="alert alert-info">Haven't started quitting yet.</div>
 				<% end %>
+				<div class="clearfix"></div>
+								<div class="pull-right">
+					<%= link_to user_relapse_path(current_user), :class => "btn btn-default", :remote => true do %>ReLapse<% end %>
+				</div>
+				<div class="clearfix"></div>
 			</div>
 			<% end %>
 		</div>

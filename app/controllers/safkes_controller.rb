@@ -13,8 +13,10 @@ class SafkesController < ApplicationController
   end
 
   def new
-    @safke = Safke.new
-    respond_with(@safke)
+    current_user.relapse
+    # @safke = Safke.new
+    # respond_with(@safke)
+    
   end
 
   def edit

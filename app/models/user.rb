@@ -43,6 +43,11 @@ class User < ActiveRecord::Base
   
   has_many :safkes
   
+  def relapse
+    self.update_attribute(:quit_smoking, DateTime.now)
+    self.safkes.create
+  end
+  
   def add_update(description, icon)
     self.user_updates.create(description: description, icon: icon)
   end
