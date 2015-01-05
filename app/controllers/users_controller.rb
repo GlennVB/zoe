@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!, except: [:read_notifications, :post_ants]
   skip_before_filter :verify_authenticity_token, only: [:read_notifications, :post_ants, :relapse]
   before_action :set_user, except: [:post_ants]
+  skip_before_filter :verify_authenticity_token
 
   def relapse
     current_user.relapse

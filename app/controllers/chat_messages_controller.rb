@@ -1,5 +1,6 @@
 class ChatMessagesController < ApplicationController
   before_action :set_chat_message, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :verify_authenticity_token
 
   respond_to :html
   respond_to :json
@@ -22,7 +23,11 @@ class ChatMessagesController < ApplicationController
   end
 
   def create
+    if current_user != nil
     @chat_message = current_user.chat_messages.create(chat_message_params)
+    else
+      @chat_message = ChatMessage.create(chat_message_params)
+    end
     flash[:notice] = 'ChatMessage was successfully created.' if @chat_message.save
     respond_with(@chat_message)
   end
