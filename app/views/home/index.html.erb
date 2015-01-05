@@ -9,14 +9,12 @@
 			</div>
 		</div>
 		<div class="col-md-4">
-			<%= widget "tester", :footer => "Copyright" do %>
+			<%= widget "Smoker Widget", :footer => "Copyright" do %>
 			<div class="p-10">
-				<h4>Widget bla</h4>
-				<p>
-					Lorem ipsum text
-					<br>
-					body fill
-				</p>
+				<div class="pull-right">
+					<%= link_to user_relapse_path(current_user), :class => "btn btn-default", :remote => true do %>ReLapse<% end %>
+				</div>
+				<h4>Quit smoking <strong><%= time_ago_in_words(current_user.quit_smoking) %></strong> ago!</h4>
 			</div>
 			<% end %>
 		</div>

@@ -1,8 +1,16 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!, except: [:read_notifications, :post_ants]
-  skip_before_filter :verify_authenticity_token, only: [:read_notifications, :post_ants]
+  skip_before_filter :verify_authenticity_token, only: [:read_notifications, :post_ants, :relapse]
   before_action :set_user, except: [:post_ants]
 
+  def relapse
+    if params[:time] != nil && params[:time] != ""
+      @user.update_attribute(:quit_smoking, params[:time])
+    else
+      @user.update_attribute(:quit_smoking, DateTime.now)
+    end
+  end
+  
   # Post settings page
   def update
     @user.update(user_params)

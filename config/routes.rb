@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   end
   devise_for :users
   
-  resources :users, only: [:update, :edit, :index, :show]
+  resources :users, only: [:update, :edit, :index, :show] do
+    get "relapse"
+  end
   post "users/read_notifications"
   resources :games do
     get "map"
