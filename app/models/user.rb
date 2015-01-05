@@ -42,6 +42,7 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   
   has_many :safkes
+  has_many :chat_messages
   
   def relapse
     self.update_attribute(:quit_smoking, DateTime.now)

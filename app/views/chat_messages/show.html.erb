@@ -1,0 +1,26 @@
+<h4 class="page-title">Chat Message</h4>
+<div class="block-area" id="horizontal">
+	<div id="notice"><%= notice %></div>
+	<h3 class="block-title">Chat Message</h3>
+	<form class="form-horizontal" role="form">
+		<div class="form-group">
+		<label class="col-md-2 control-label">Body</label>
+		<div class="col-md-10">
+			<p class="form-control-static"><%= @chat_message.body %></p>
+		</div>
+	</div>
+		<div class="form-group">
+		<label class="col-md-2 control-label">User</label>
+		<div class="col-md-10">
+			<p class="form-control-static"><%= @chat_message.user_id %></p>
+		</div>
+	</div>
+		</form>
+	<div class="form-group">
+		<div class="col-md-10 col-md-offset-2">
+			<%= link_to 'Edit', edit_chat_message_path(@chat_message) %> |
+			<%= link_to 'Back', chat_messages_path %>
+		</div>
+	</div>
+</div>
+

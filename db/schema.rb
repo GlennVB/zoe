@@ -11,12 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150105190719) do
+ActiveRecord::Schema.define(version: 20150105194011) do
 
   create_table "api_keys", force: true do |t|
     t.string   "alias"
     t.string   "key"
     t.string   "status",     default: "Open"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "chat_messages", force: true do |t|
+    t.string   "body"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

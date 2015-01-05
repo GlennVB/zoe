@@ -1,4 +1,8 @@
 Rails.application.routes.draw do  
+  resources :chat_messages
+
+  get 'speak/chat'
+
   resources :safkes
 
   resources :ideas do
