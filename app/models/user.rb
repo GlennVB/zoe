@@ -41,6 +41,8 @@ class User < ActiveRecord::Base
   has_many :players
   mount_uploader :avatar, AvatarUploader
   
+  has_many :safkes
+  
   def add_update(description, icon)
     self.user_updates.create(description: description, icon: icon)
   end

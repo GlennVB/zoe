@@ -1,0 +1,2 @@
+module SafkesHelper
+end

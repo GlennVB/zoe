@@ -1,4 +1,6 @@
 Rails.application.routes.draw do  
+  resources :safkes
+
   resources :ideas do
     post "" => "ideas#update"
   end
