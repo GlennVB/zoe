@@ -27,6 +27,7 @@
 #  theme_preference       :string(255)      default("skin-blur-blue")
 #  profile                :text
 #  avatar                 :string(255)
+#  quit_smoking           :datetime
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: ideas
+#
+#  id          :integer          not null, primary key
+#  name        :string(255)      default("")
+#  description :text             default("")
+#  completed   :boolean          default(FALSE)
+#  user_id     :integer
+#  published   :boolean          default(FALSE)
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 class Idea < ActiveRecord::Base
   belongs_to :user
   scope :published, -> { where(published: true) }
